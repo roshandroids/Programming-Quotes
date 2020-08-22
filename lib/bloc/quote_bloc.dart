@@ -22,7 +22,7 @@ class QuoteBloc extends Bloc<FetchQuoteEvent, QuoteState> {
     if (event is FetchQuoteEvent) {
       yield QuoteLoadingState();
       try {
-        List data = await repository.getQuotes();
+        List data = await repository.getQuotes(event.page);
         List<QuoteModel> quotes =
             data.map((e) => QuoteModel.fromJson(e)).toList();
         yield QuoteLoadedState(quotes: quotes);

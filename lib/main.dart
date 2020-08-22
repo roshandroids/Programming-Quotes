@@ -10,6 +10,9 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: AllQuotes());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: AllQuotes(),
+    );
   }
 }
